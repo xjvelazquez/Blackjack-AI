@@ -1,14 +1,7 @@
 Assignment 3: Blackjack
 =========
-DO NOT FORK THIS REPO
-----
+
 Implement Monte Carlo policy evaluation, Temporal Difference policy evaluation, and Q-Learning for Blackjack. The base game engine uses code from [here](https://github.com/ServePeak/Blackjack-Python/blob/master/blackjack.py). 
-
-Authors: Zhizhen Qin, Rishikesh Vaishnav, Sicun Gao
-
-Due date
------
-May-10 5pm. 
 
 The Game
 -----
@@ -34,12 +27,6 @@ The following keyboard options are available:
 - '1': save the AI state (not the game state)
 - '2': load from saved AI state
 
-Submission
-----
-You only need to submit the `ai.py` file on Gradescope for grading. 
-
-If you have changed other files, make sure that your implementation works properly with the given `main.py` and `game.py`, and `test.py` which we will use for grading. The grading metrics are the same as previous PAs, (if your code fails the tests in `test.py` it will not get more than the Half grade).
-
 Tasks
 -----
 Implement the following algorithms. In all of them, the discount factor is 0.95 as given in Line 8 of `ai.py`. When the player wins, give reward +1, and when loses, the reward is -1. (See **Blackjack Rules** below for details).
@@ -57,19 +44,6 @@ Evaluate the policy "Hit (ask for a new card) if sum of cards is below 14, and S
 - Q-Learning
 
 Implement the Q-learning algorithm. Use epsilon=0.4 in the epsilon-strategy in your final submission, but you are encouraged to check the behavior difference for various choices of epsilon. After learning, AutoPlay will follow the Q-learning values to make decisions. 
-
-Testing
------
-
-We provide three testers: `-t 1` for the first 3-step deterministic tests, `-t 2` for 1k-step divergence test, and `-t 3` for 1-million-step convergence test. 
-
-You can also give the options for MC-only (`-a 1`), TD-only (`-a 1`), Q-Learning-only (`-a 1`), and all together (`-a 0` and this is the default). Note that the 3-step deterministic tester (`-t 1`) is not provided for Q-learning. 
-
-Examples:
-
-`python main.py -t 1 -a 1` to run the deterministic tester for MC algorithm. 
-`python main.py -t 2 -a 3` to run the divergence tester for Q-Learning algorithm.
-`python main.py -t 3` to run the convergence tester for all algorithms.
 
 ### 3-Step Deterministic Tests
 
